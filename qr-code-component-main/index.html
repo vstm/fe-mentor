@@ -13,40 +13,29 @@
   <link href="./style.css" rel="stylesheet">
 
   <title>Frontend Mentor | QR code component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
-<body class="font-qr bg-qr-light-grey text-base h-screen flex flex-col justify-center">
+<body class="font-qr bg-qr-light-grey text-base h-screen flex flex-col">
 
-  <div class="flex flex-col items-center justify-center">
+  <main class="flex flex-col items-center justify-center my-auto">
     <div class="bg-white rounded-qr p-4 space-y-4 w-[320px]">
+
       <img class="rounded-xl w-full aspect-square" src="./images/image-qr-code.png">
-      <div class="flex flex-col space-y-3 text-center">
+
+      <section class="flex flex-col space-y-3 text-center">
         <h2 class="text-qr-dark-navy text-qr-heading font-bold text-wrap ">Improve your front-end skills by building
           projects</h2>
         <p class="text-qr-grey text-wrap text-qr-body"> Scan the QR code to visit Frontend Mentor and take your coding
           skills to the next level</p>
-      </div>
-
+      </section>
     </div>
-  </div>
+  </main>
 
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://www.frontendmentor.io/profile/vstm">Stefan Vetsch</a>.
-  </div>
+  <footer class="text-qr-attribution text-center">
+    Challenge by <a class="text-qr-attribution-link" href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank">Frontend Mentor</a>.
+    Coded by <a class="text-qr-attribution-link" href="https://www.frontendmentor.io/profile/vstm">Stefan Vetsch</a>.
+  </footer>
 </body>
 
 </html>

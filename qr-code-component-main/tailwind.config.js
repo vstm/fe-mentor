@@ -14,6 +14,7 @@ module.exports = {
       fontSize: {
         'qr-body': '15px',
         'qr-heading': '22px',
+        'qr-attribution': '11px',
       },
       colors: {
         'qr': {
@@ -23,6 +24,7 @@ module.exports = {
           'grey': '#7d889e',
           'light-grey': '#d5e1ef',
           'white': '#ffffff',
+          'attribution-link': 'hsl(228, 45%, 44%)',
         }
       }
     },
