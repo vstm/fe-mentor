@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Blog preview card</title>
+
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+
+    <body
+        class="min-w-vw flex min-h-dvh items-center justify-center bg-blog-preview-card-yellow font-figtree"
+    >
+        <main
+            class="group max-w-[327px] space-y-6 rounded-2xl border border-blog-preview-card-black bg-blog-preview-card-pure-white p-6 text-blog-preview-card-black shadow-[8px_8px_rgba(0,0,0,1.0)] hover:shadow-[16px_16px_rgba(0,0,0,1.0)] sm:max-w-[384px]"
+        >
+            <img
+                class="h-[200px] w-full rounded-xl object-none object-center"
+                src="./assets/images/illustration-article.svg"
+                alt="Abstract depiction of code"
+            />
+
+            <div class="space-y-3">
+                <ul class="flex gap-2">
+                    <li
+                        class="rounded-md bg-blog-preview-card-yellow px-3 py-1 text-xs font-extrabold sm:text-sm"
+                    >
+                        Learning
+                    </li>
+                </ul>
+
+                <div class="text-xs sm:text-sm">
+                    Published <time datetime="2023-12-21">21 Dec 2023</time>
+                </div>
+
+                <h2
+                    class="text-xl font-extrabold group-hover:text-blog-preview-card-yellow sm:text-2xl"
+                >
+                    HTML &amp; CSS foundations
+                </h2>
+
+                <p
+                    class="text-sm leading-normal text-blog-preview-card-grey sm:text-base"
+                >
+                    These languages are the backbone of every website, defining
+                    structure, content, and presentation.
+                </p>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <img
+                    class="aspect-square w-8"
+                    src="./assets/images/image-avatar.webp"
+                /><strong class="text-sm font-extrabold">Greg Hooper</strong>
+            </div>
+        </main>
+    </body>
+</html>

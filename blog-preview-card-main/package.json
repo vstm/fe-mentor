@@ -1,0 +1,17 @@
+{
+  "name": "blog-preview-card-main",
+  "version": "1.0.0",
+  "description": "Blog preview card challenge of frontend mentor",
+  "main": "index.html",
+  "scripts": {
+    "start": "tailwindcss -i ./style-tailwind.css -o ./style.css --watch ",
+    "build": "mkdir -p dist && cp -r index.html assets dist/ &&  tailwindcss -i ./style-tailwind.css -o ./dist/style.css "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwindcss": "^3.4.4"
+  }
+}
