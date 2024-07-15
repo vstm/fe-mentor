@@ -12,6 +12,9 @@ module.exports = {
                 heading: defaultTheme.fontSize['2xl'],
                 body: defaultTheme.fontSize['sm'],
             },
+            screens: {
+              desktop: '1440px',
+            },
             colors: {
                 primary: {
                     green: 'hsl(75, 94%, 57%)',
