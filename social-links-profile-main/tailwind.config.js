@@ -9,11 +9,23 @@ module.exports = {
                 inter: ['Inter', ...defaultTheme.fontFamily.sans],
             },
             fontSize: {
-                heading: defaultTheme.fontSize['2xl'],
-                body: defaultTheme.fontSize['sm'],
+                heading: [
+                    defaultTheme.fontSize['2xl'][0],
+                    {
+                        ...defaultTheme.fontSize['2xl'][1],
+                        lineHeight: defaultTheme.lineHeight.normal,
+                    },
+                ],
+                body: [
+                    defaultTheme.fontSize['sm'][0],
+                    {
+                        ...defaultTheme.fontSize['sm'][1],
+                        lineHeight: defaultTheme.lineHeight.normal,
+                    },
+                ],
             },
             screens: {
-              desktop: '1440px',
+                desktop: '1440px',
             },
             colors: {
                 primary: {
