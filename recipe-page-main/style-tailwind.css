@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .typo-text-preset-1 {
+        @apply font-young-serif text-preset-1;
+    }
+
+    .typo-text-preset-1-mobile {
+        @apply font-young-serif text-preset-1-mobile;
+    }
+
+    .typo-text-preset-2 {
+        @apply font-young-serif text-preset-2;
+    }
+
+    .typo-text-preset-3 {
+        @apply font-outfit text-preset-3;
+    }
+
+    .typo-text-preset-4 {
+        @apply font-outfit text-preset-4;
+    }
+
+    .typo-text-preset-4-bold {
+        @apply font-outfit text-preset-4-bold;
+    }
+}

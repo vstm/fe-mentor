@@ -29,6 +29,16 @@ The designs were created to the following widths:
 
 - Font size (paragraph): 16px
 
+### Additional
+
+- Text Preset 1: 40px, 100% Line Height, Young Serif Regular
+- Text Preset 1 (Mobile): 36px, 100% Line Height, Young Serif Regular
+- Text Preset 2: 28px, 100% Line Height, Young Serif Regular
+- Text Preset 3: 20px, 100% Line Height, Outfit Semibold
+- Text Preset 4: 16px, 150% Line Height, Outfit Regular
+- Text Preset 4 Bold: 16px, 150% Line Height, Outfit Bold
+
+
 ### Fonts
 
 - Family: [Young Serif](https://fonts.google.com/specimen/Young+Serif)
