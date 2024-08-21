@@ -1,36 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product preview card component</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
 
-  Perfume
+        <link rel="stylesheet" href="./style.css" />
 
-  Gabrielle Essence Eau De Parfum
+        <title>Frontend Mentor | Product preview card component</title>
+    </head>
+    <body class="bg-primary-cream flex justify-center items-center h-dvh">
+        <main
+            class="bg-neutral-white rounded-[10px] mobile:max-w-[343px] gap-[19px] desktop:gap-0 flex flex-col desktop:flex-row desktop:max-w-none desktop:h-[450px]"
+        >
+            <picture>
+                <source
+                    media="(max-width: 1439px)"
+                    srcset="./images/image-product-mobile.jpg"
+                />
+                <source
+                    media="(min-width: 1440px)"
+                    srcset="./images/image-product-desktop.jpg"
+                />
+                <img
+                    class="desktop:h-[450px] rounded-t-[10px] desktop:rounded-l-[10px] desktop:rounded-r-none"
+                    src="./images/image-product-mobile.jpg"
+                    alt="Perfume Bottle"
+                />
+            </picture>
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
+            <section
+                class="bg-neutral-white space-y-[19px] desktop:space-y-[25px] pb-[25px] desktop:p-8 rounded-b-[10px] desktop:rounded-b-none desktop:rounded-r-[10px]"
+            >
+                <div
+                    class="typo-overline text-neutral-aurometal-saurus uppercase"
+                >
+                    Perfume
+                </div>
+                <h1
+                    class="max-w-[295px] desktop:max-w-[236px] typo-display text-neutral-gunmetal"
+                >
+                    Gabrielle Essence Eau De Parfum
+                </h1>
 
-  $149.99
-  $169.99
+                <p
+                    class="max-w-[295px] desktop:max-w-[236px] typo-body text-neutral-aurometal-saurus"
+                >
+                    A floral, solar and voluptuous interpretation composed by
+                    Olivier Polge, Perfumer-Creator for the House of CHANEL.
+                </p>
 
-  Add to Cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+                <div class="flex flex-wrap items-center gap-[19px]">
+                    <span class="typo-display text-primary-deep-aquamarine"
+                        >$149.99</span
+                    >
+                    <del class="typo-sub-price text-neutral-aurometal-saurus"
+                        >$169.99</del
+                    >
+                </div>
+
+                <button
+                    class="flex gap-[12px] justify-center items-center bg-primary-deep-aquamarine hover:bg-primary-deep-aquamarine-hover text-neutral-white px-4 mobile:w-[295px] h-[48px] rounded-lg"
+                >
+                    <img src="./images/icon-cart.svg" alt="Cart Icon" /> Add to
+                    Cart
+                </button>
+            </section>
+        </main>
+    </body>
 </html>

@@ -3,27 +3,23 @@
 @tailwind utilities;
 
 @layer utilities {
-    .typo-text-preset-1 {
-        @apply font-young-serif text-preset-1;
+    .typo-display {
+        @apply font-fraunces text-display;
     }
 
-    .typo-text-preset-1-mobile {
-        @apply font-young-serif text-preset-1-mobile;
+    .typo-body {
+        @apply font-montserrat text-body;
     }
 
-    .typo-text-preset-2 {
-        @apply font-young-serif text-preset-2;
+    .typo-button-text {
+        @apply font-montserrat text-button-text;
     }
 
-    .typo-text-preset-3 {
-        @apply font-outfit text-preset-3;
+    .typo-overline {
+        @apply font-montserrat text-overline;
     }
 
-    .typo-text-preset-4 {
-        @apply font-outfit text-preset-4;
-    }
-
-    .typo-text-preset-4-bold {
-        @apply font-outfit text-preset-4-bold;
+    .typo-sub-price {
+        @apply font-montserrat text-sub-price;
     }
 }
