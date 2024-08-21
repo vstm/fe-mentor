@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "prettier . --check",
     "start": "tailwindcss -i ./style-tailwind.css -o ./style.css --watch ",
-    "build": "mkdir -p dist && cp -r index.html assets dist/ &&  tailwindcss -i ./style-tailwind.css -o ./dist/style.css "
+    "build": "mkdir -p dist && cp -r index.html images dist/ &&  tailwindcss -i ./style-tailwind.css -o ./dist/style.css "
   },
   "author": "Stefan Vetsch <s@svetsch.ch>",
   "license": "ISC",
