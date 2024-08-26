@@ -1,45 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Four card feature section</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  
-  Reliable, efficient delivery
-  Powered by Technology
+        <title>Frontend Mentor | Four card feature section</title>
 
-  Our Artificial Intelligence powered tools use millions of project data points 
-  to ensure that your project is successful
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
 
-  Supervisor
-  Monitors activity to identify project roadblocks
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body
+        class="font-poppins bg-c-neutral-very-light-gray text-c-neutral-very-dark-blue"
+    >
+        <main class="space-y-[2.3125rem] desktop:space-y-16 py-[4.875rem] px-8">
+            <header
+                class="text-center space-y-[calc(1rem_-_2px)] desktop:space-y-[calc(1rem_-_3px)] desktop:max-w-[33.75rem] desktop:mx-auto"
+            >
+                <div
+                    class="leading-normal text-2xl tracking-[0.010625rem] desktop:text-4xl desktop:leading-normal desktop:space-y-[-3px]"
+                >
+                    <h1 class="font-extralight">
+                        Reliable, efficient delivery
+                    </h1>
+                    <h2 class="font-semibold">Powered by Technology</h2>
+                </div>
+                <p
+                    class="opacity-50 text-[0.9375rem] leading-[1.5625rem] tracking-[0.00625rem]"
+                >
+                    Our Artificial Intelligence powered tools use millions of
+                    project data points to ensure that your project is
+                    successful
+                </p>
+            </header>
 
-  Team Builder
-  Scans our talent network to create the optimal team for your project
-
-  Karma
-  Regularly evaluates our talent to ensure quality
-
-  Calculator
-  Uses data from past projects to provide better delivery estimates
-
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+            <div
+                class="mx-auto grid grid-cols-1 gap-y-[2.3125rem] desktop:w-[69.375rem] desktop:h-[33.125rem] desktop:gap-[1.875rem] desktop:grid-cols-3 desktop:grid-rows-4"
+            >
+                <div
+                    class="p-7 flex flex-col rounded-lg border-c-neutral-border shadow-card border-t-4 border-t-c-primary-cyan py-[1.6875rem] h-[13.875rem] desktop:h-auto px-7 desktop:row-start-2 desktop:row-span-2"
+                >
+                    <h3 class="font-semibold text-xl leading-normal">
+                        Supervisor
+                    </h3>
+                    <p
+                        class="opacity-50 text-[0.8125rem] leading-[1.4375rem] tracking-[0.005625rem]"
+                    >
+                        Monitors activity to identify project roadblocks
+                    </p>
+                    <img
+                        class="self-end mt-auto desktop:size-16 size-[3.5625rem]"
+                        src="./images/icon-supervisor.svg"
+                    />
+                </div>
+                <div
+                    class="p-7 flex flex-col rounded-lg border-c-neutral-border shadow-card border-t-4 border-t-c-primary-red py-[1.6875rem] h-[13.875rem] desktop:h-auto px-7 desktop:col-start-2 desktop:row-span-2"
+                >
+                    <h3 class="font-semibold text-xl leading-normal">
+                        Team Builder
+                    </h3>
+                    <p
+                        class="opacity-50 text-[0.8125rem] leading-[1.4375rem] tracking-[0.005625rem]"
+                    >
+                        Scans our talent network to create the optimal team for
+                        your project
+                    </p>
+                    <img
+                        class="self-end mt-auto desktop:size-16 size-[3.5625rem]"
+                        src="./images/icon-team-builder.svg"
+                    />
+                </div>
+                <div
+                    class="p-7 flex flex-col rounded-lg border-c-neutral-border shadow-card border-t-4 border-t-c-primary-orange py-[1.6875rem] h-[13.875rem] desktop:h-auto px-7 desktop:col-start-2 desktop:row-span-2"
+                >
+                    <h3 class="font-semibold text-xl leading-normal">Karma</h3>
+                    <p
+                        class="opacity-50 text-[0.8125rem] leading-[1.4375rem] tracking-[0.005625rem]"
+                    >
+                        Regularly evaluates our talent to ensure quality
+                    </p>
+                    <img
+                        class="self-end mt-auto desktop:size-16 size-[3.5625rem]"
+                        src="./images/icon-karma.svg"
+                    />
+                </div>
+                <div
+                    class="p-7 flex flex-col rounded-lg border-c-neutral-border shadow-card border-t-4 border-t-c-primary-blue py-[1.6875rem] h-[13.875rem] desktop:h-auto px-7 desktop:col-start-3 desktop:row-start-2 desktop:row-span-2"
+                >
+                    <h3 class="font-semibold text-xl leading-normal">
+                        Calculator
+                    </h3>
+                    <p
+                        class="opacity-50 text-[0.8125rem] leading-[1.4375rem] tracking-[0.005625rem]"
+                    >
+                        Uses data from past projects to provide better delivery
+                        estimates
+                    </p>
+                    <img
+                        class="self-end mt-auto desktop:size-16 size-[3.5625rem]"
+                        src="./images/icon-calculator.svg"
+                    />
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
