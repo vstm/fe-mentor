@@ -1,0 +1,19 @@
+{
+  "name": "testimonials-grid-section-main",
+  "version": "1.0.0",
+  "description": "Solution to the testimonials-grid-section-main challenge",
+  "main": "index.html",
+  "scripts": {
+    "lint": "prettier . --check",
+    "start": "tailwindcss -i ./style-tailwind.css -o ./style.css --watch ",
+    "build": "mkdir -p dist && cp -r index.html images dist/ &&  tailwindcss -i ./style-tailwind.css -o ./dist/style.css "
+  },
+  "keywords": [],
+  "author": "Stefan Vetsch <s@svetsch.ch>",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.10"
+  }
+}
