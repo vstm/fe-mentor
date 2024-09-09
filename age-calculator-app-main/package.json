@@ -1,5 +1,6 @@
 {
   "name": "age-calculator-app-main",
+  "description": "Vue solution for the age-calculator-app-main challenge",
   "version": "0.0.0",
   "private": true,
   "type": "module",

@@ -73,11 +73,15 @@ const [value, modelModifiers] = defineModel({
     }
 
     .text-field__input {
-
         padding: calc(0.75rem - 1px) 1rem;
         color: var(--color--neutral--off-black);
         border: 1px solid var(--color--neutral--light-grey);
         border-radius: 8px;
+
+        &:focus, &:focus-within, &:focus-visible {
+            outline: none;
+            border-color: var(--color--primary--purple);
+        }
 
         & {
             @include typo("heading-m");
