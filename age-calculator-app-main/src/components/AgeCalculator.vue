@@ -1,60 +1,11 @@
 <script setup>
-import { ref } from 'vue';
 import TextField from './TextField.vue';
-import { validateDay, validateMonth, validateYear, createDate, isValidDate, dateDiff } from '../utils/date-utils';
 import CalculateButton from './CalculateButton.vue';
 import DateDifferenceTable from './DateDifferenceTable.vue';
 import ItemWithSeparator from './ItemWithSeparator.vue';
+import useAgeCalculator from '@/composable/useAgeCalculator';
 
-const day = ref();
-const month = ref();
-const year = ref();
-
-const dayMessage = ref(null);
-const monthMessage = ref(null);
-const yearMessage = ref(null);
-
-const emptyValue = Object.freeze({ days: null, months: null, years: null });
-
-const diff = ref({ ...emptyValue });
-
-
-function onCalculate() {
-
-    const date = new Date();
-
-    const dayValue = parseInt(day.value, 10);
-    const monthValue = parseInt(month.value, 10);
-    const yearValue = parseInt(year.value, 10);
-
-    const dayErrors = validateDay(dayValue);
-    const monthErrors = validateMonth(monthValue);
-    const yearErrors = validateYear(yearValue, date.getFullYear());
-
-    if (dayErrors || monthErrors || yearErrors) {
-        diff.value = { ...emptyValue };
-        dayMessage.value = dayErrors;
-        monthMessage.value = monthErrors;
-        yearMessage.value = yearErrors;
-        return;
-    }
-
-    if (!isValidDate(yearValue, monthValue, dayValue)) {
-        diff.value = { ...emptyValue };
-        dayMessage.value = 'This is not a valid date';
-        monthMessage.value = 'This is not a valid date';
-        yearMessage.value = 'This is not a valid date';
-        return;
-    }
-
-    const inputDate = createDate(yearValue, monthValue, dayValue);
-
-    dayMessage.value = null;
-    monthMessage.value = null;
-    yearMessage.value = null;
-
-    diff.value = dateDiff(inputDate, date);
-}
+const { dateValue, onCalculate, difference, isError, dateMessages } = useAgeCalculator();
 
 </script>
 
@@ -62,19 +13,19 @@ function onCalculate() {
     <main class="age-calculator">
         <form class="age-calculator__form" @submit.prevent="onCalculate">
             <div class="age-calculator__input-row">
-                <TextField required label="Day" placeholder="DD" v-model="day" :is-error="dayMessage !== null"
-                    :message="dayMessage"></TextField>
-                <TextField required label="Month" placeholder="MM" v-model="month" :is-error="monthMessage !== null"
-                    :message="monthMessage"></TextField>
-                <TextField required label="Year" placeholder="YYYY" v-model="year" :is-error="yearMessage !== null"
-                    :message="yearMessage"></TextField>
+                <TextField required label="Day" placeholder="DD" v-model="dateValue.day" :is-error="isError.day"
+                    :message="dateMessages.day"></TextField>
+                <TextField required label="Month" placeholder="MM" v-model="dateValue.month" :is-error="isError.month"
+                    :message="dateMessages.month"></TextField>
+                <TextField required label="Year" placeholder="YYYY" v-model="dateValue.year" :is-error="isError.year"
+                    :message="dateMessages.year"></TextField>
             </div>
             <ItemWithSeparator>
                 <CalculateButton type="submit" />
             </ItemWithSeparator>
         </form>
 
-        <DateDifferenceTable :difference="diff" />
+        <DateDifferenceTable :difference="difference" />
     </main>
 </template>
 
