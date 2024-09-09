@@ -1,0 +1,26 @@
+@import "@/assets/mixins";
+@import "@/assets/reset";
+
+:root {
+    --font--default: Poppins, Arial, Helvetica, sans-serif;
+
+    --color--primary--purple: hsl(259, 100%, 65%);
+    --color--primary--light-red: hsl(0, 100%, 67%);
+
+    --color--neutral--white: hsl(0, 0%, 100%);
+    --color--neutral--off-white: hsl(0, 0%, 94%);
+    --color--neutral--grey: hsl(317, 1%, 44%);
+    --color--neutral--light-grey: hsl(0, 0%, 86%);
+    --color--neutral--smokey-grey: hsl(0, 1%, 44%);
+    --color--neutral--off-black: hsl(0, 0%, 8%);
+}
+
+body {
+    font-family: var(--font--default);
+    background: var(--color--neutral--off-white);
+
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

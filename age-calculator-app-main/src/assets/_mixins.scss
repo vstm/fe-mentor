@@ -1,0 +1,54 @@
+@use "sass:map";
+
+$mq-breakpoints: (
+    "mobile": 375px,
+    "desktop": 1440px,
+);
+
+@mixin mq($size) {
+    @if not map.has-key($mq-breakpoints, $size) {
+        @error "$size must be one of #{map.keys($mq-breakpoints)} - \"#{$size}\" given";
+    }
+
+    @media (min-width: #{map.get($mq-breakpoints, $size)}) {
+        @content;
+    }
+}
+
+@mixin typo($style) {
+    @if $style == "heading-l" {
+        font-weight: 800;
+        font-size: 3.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.02ch;
+        font-style: italic;
+        @include mq("desktop") {
+            font-size: 6.5rem;
+        }
+    } @else if $style == "heading-m" {
+        font-weight: bold;
+        font-size: 1.25rem;
+        letter-spacing: 0.01ch;
+        line-height: 1.5;
+        @include mq("desktop") {
+            font-size: 2rem;
+        }
+    } @else if $style == "heading-s" {
+        font-weight: bold;
+        font-size: 0.75rem;
+        letter-spacing: 0.25ch;
+        line-height: 1.5;
+        @include mq("desktop") {
+            font-size: 0.875rem;
+        }
+    } @else if $style == "body" {
+        font-style: italic;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        @include mq("desktop") {
+            font-size: 0.875rem;
+        }
+    } @else {
+        @error "Unknown typography style #{$style}.";
+    }
+}
