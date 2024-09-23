@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base ./",
+    "build:default": "vite build",
     "preview": "vite preview"
   },
   "keywords": [],
