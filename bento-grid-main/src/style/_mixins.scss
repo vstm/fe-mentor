@@ -1,0 +1,92 @@
+@use "sass:map";
+
+$mq-breakpoints: (
+    "mobile": 375px,
+    "tablet": 768px,
+    "desktop": 1440px,
+);
+
+@mixin mq($size) {
+    @if not map.has-key($mq-breakpoints, $size) {
+        @error "$size must be one of #{map.keys($mq-breakpoints)} - \"#{$size}\" given";
+    }
+
+    @media (min-width: #{map.get($mq-breakpoints, $size)}) {
+        @content;
+    }
+}
+
+@mixin mq-below-minimal() {
+    @media (max-width: #{map.get($mq-breakpoints, "mobile") - 1}) {
+        @content;
+    }
+}
+
+@mixin typography($style) {
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+
+    @if $style == "text-preset-4" {
+        font-size: 1.125rem;
+        line-height: 1.11;
+        letter-spacing: 0;
+        font-weight: 400;
+    } @else if $style == "text-preset-3" {
+        font-size: 1.625rem;
+        line-height: 0.875;
+        letter-spacing: -0.06em;
+        font-weight: 500;
+
+        @include mq("tablet") {
+            & {
+                font-size: 1.75rem;
+            }
+        }
+
+        @include mq("desktop") {
+            & {
+                letter-spacing: -0.125rem;
+                font-size: 2rem;
+            }
+        }
+    } @else if $style == "text-preset-2" {
+        font-size: 2rem;
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        font-weight: 500;
+
+        @include mq("tablet") {
+            & {
+                font-size: 2.25rem;
+                line-height: 0.83;
+            }
+        }
+
+        @include mq("desktop") {
+            & {
+                letter-spacing: -0.125rem;
+                font-size: 2.5rem;
+                line-height: 0.9;
+            }
+        }
+    } @else if $style == "text-preset-1" {
+        font-size: 2.875rem;
+        line-height: 0.875;
+        letter-spacing: -0.04em;
+        font-weight: 500;
+
+        @include mq("tablet") {
+            & {
+                font-size: 3.375rem;
+            }
+        }
+
+        @include mq("desktop") {
+            & {
+                font-size: 3.875rem;
+                letter-spacing: -0.1875rem;
+            }
+        }
+    } @else {
+        @error "unknown typography style #{$style}";
+    }
+}

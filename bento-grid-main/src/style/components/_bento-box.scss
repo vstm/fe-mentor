@@ -1,0 +1,23 @@
+@import '../mixins';
+
+.bento-box {
+    & {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        max-width: 21.4375rem;
+
+        gap: var(--spacing--400);
+
+        @include mq("tablet") {
+            max-width: 43rem;
+            grid-template-columns: repeat(8, minmax(0, 1fr));
+            grid-template-rows: 20.25rem auto;
+        }
+
+        @include mq('desktop') {
+            max-width: unset;
+            grid-template-columns: repeat(12, minmax(0, 4rem));
+            grid-template-rows: 20.25rem 3.6875rem 9.75rem 15.375rem;
+        }
+    }
+}
