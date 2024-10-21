@@ -1,19 +1,24 @@
 {
-  "name": "suite-landing-page",
-  "version": "1.0.0",
-  "description": "suite-landing-page solution with sass",
-  "main": "index.html",
-  "scripts": {
-    "start": "npm run dev",
-    "dev": "vite",
-    "build": "vite build --base ./",
-    "build:default": "vite build",
-    "preview": "vite preview"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "vite": "^5.4.8"
-  }
+    "name": "suite-landing-page",
+    "version": "1.0.0",
+    "description": "suite-landing-page solution with sass",
+    "main": "index.html",
+    "type": "module",
+    "scripts": {
+        "start": "npm run dev",
+        "dev": "vite",
+        "build": "vite build --base ./",
+        "build:default": "vite build",
+        "preview": "vite preview"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "sass": "^1.79.4",
+        "vite": "^5.4.8"
+    },
+    "dependencies": {
+        "modern-normalize": "^3.0.1"
+    }
 }

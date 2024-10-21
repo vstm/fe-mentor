@@ -1,0 +1,80 @@
+@import "mixins";
+
+.hero-section {
+    .hero-section__title-box {
+        display: flex;
+        flex-direction: column;
+        gap: var(--landing-page--default-gap);
+
+        @include mq('tablet') {
+            position: relative;
+            padding-right: 8rem;
+            height: 30.125rem;
+        }
+
+        @include mq('desktop') {
+            height: 37.5rem;
+        }
+    }
+
+    .hero-section__hero-image {
+        align-self: center;
+
+        @include mq('tablet') {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 17.5625rem;
+            z-index: -1;
+        }
+
+        @include mq('desktop') {
+            width: 21.875rem;
+        }
+    }
+
+    .hero-section__cta-button {
+        align-self: flex-start;
+    }
+
+    .hero-section__title-wrapper,
+    .hero-section__title {
+        @include typo('heading-xl');
+    }
+
+    .hero-section__title {
+        color: var(--color--primary-dark-blue);
+
+        @include mq('tablet') {
+            text-wrap: balance;
+        }
+    }
+
+    .hero-section__title-arc {
+        @include mq('mobile') {
+            margin-left: 7.7ex;
+            width: 7.45ex;
+        }
+
+        @include mq('tablet') {
+            margin-left: 8.1ex;
+            width: 7.8ex;
+        }
+
+        @include mq('desktop') {
+            margin-left: 7.6ex;
+            width: 7.6ex;
+        }
+    }
+
+    .hero-section__intro {
+        color: var(--color--primary-grey);
+        @include typo('body');
+
+        @include mq('desktop') {
+            max-width: 21.875rem;
+        }
+    }
+}

@@ -1,43 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Suite landing page</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+    <title>Frontend Mentor | Suite landing page</title>
+
+    <link rel="stylesheet" href="./src/style.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
-  Request Beta Access
+    <main class="landing-page">
+        <header class="landing-page__with-spacing landing-page__header header">
+            <img src="./assets/logo.svg" width="81" height="32" alt="suite logo">
 
-  A super solution for your business.
+            <a class="button button--is-secondary" href="#">
+                Request Beta Access
+            </a>
+        </header>
+        <div class="landing-page__with-spacing
+                landing-page__hero-section
+                hero-section">
+            <div class="hero-section__title-box">
+                <div class="hero-section__title-wrapper">
+                    <img class="hero-section__title-arc" src="./assets/pattern-curved-line-1.svg">
+                    <h1 class="hero-section__title">
+                        A <strong>super solution</strong> for your <strong>business.</strong>
+                    </h1>
+                </div>
 
-  Our marketing and sales automations help you scale your outreach to 
-  get more leads for your company. 
+                <p class="hero-section__intro">
+                    Our marketing and sales automations help you scale your outreach to
+                    get more leads for your company.
+                </p>
 
-  Request Beta Access
+                <a class="hero-section__cta-button button button--is-primary" href="#">
+                    Request Beta Access
+                </a>
 
-  2K+
-  Companies
+                <picture class="hero-section__hero-image">
+                    <source media="(min-width: 768px)" srcset="./assets/image-hero-portrait.webp,
+                            ./assets/image-hero-portrait@2x.webp 2x" type="image/webp" />
 
-  8
-  Languages
+                    <source media="(min-width: 768px)" srcset="./assets/image-hero-portrait.png,
+                            ./assets/image-hero-portrait@2x.png 2x" type="image/png" />
 
-  1.2M
-  Leads
+                    <source srcset="./assets/image-hero-landscape.webp,
+                            ./assets/image-hero-landscape@2x.webp 2x" type="image/webp" />
 
-  It just works.
+                    <source srcset="./assets/image-hero-landscape.png,
+                            ./assets/image-hero-landscape@2x.png 2x" type="image/png" />
 
-  “I really like how it is an all-in-one solution that handle many of 
-  the tasks that you would normally need separate tools to do the same 
-  job. This thing is a miracle worker.”
+                    <img src="assets/image-hero-landscape.png" alt="Image
+                            of a mobile phone" />
+                </picture>
+            </div>
 
-  Jeremy Robinson
-  CMO, Fylo
 
-  Copyright - Suite
+            <div class="landing-page__stats-grid stats-grid">
+                <div class="stats-grid__item">
+                    <div class="stats-grid__item-value">
+                        2K+
+                    </div>
+                    <div class="stats-grid__item-title">
+                        Companies
+                    </div>
+                </div>
+                <div class="stats-grid__item">
+                    <div class="stats-grid__item-value">
+                        8
+                    </div>
+                    <div class="stats-grid__item-title">
+                        Languages
+                    </div>
+                </div>
+                <div class="stats-grid__item">
+                    <div class="stats-grid__item-value">
+                        1.2M
+                    </div>
+                    <div class="stats-grid__item-title">
+                        Leads
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="landing-page__quote-section">
+            <div class="quote-section">
+                <div class="quote-section__main">
+                    <div class="quote-section__main-image-wrapper">
+                        <picture class="quote-section__main-image">
+                            <source media="(min-width: 1440px)" srcset="./assets/image-jeremy-large.webp,
+                                    ./assets/image-jeremy-large@2x.webp 2x" type="image/webp" />
+                            <source media="(min-width: 1440px)" srcset="./assets/image-jeremy-large.png,
+                                    ./assets/image-jeremy-large@2x.png 2x" type="image/png" />
+                            <source srcset="./assets/image-jeremy-small.webp,
+                                    ./assets/image-jeremy-small@2x.webp 2x" type="image/webp" />
+                            <source srcset="./assets/image-jeremy-small.png,
+                                    ./assets/image-jeremy-small@2x.png 2x" type="image/png" />
+                            <img src="assets/image-jeremy-small.png" xwidth="252" xheight="402" alt="Image of
+                    Jeremy Robinson" />
+                        </picture>
+                    </div>
+
+                    <img src="assets/pattern-curved-line-2.svg" class="quote-section__curved-line" width="49.27"
+                        height="40" alt="curved line" />
+
+                    <div class="quote-section__text-block">
+                        <h1 class="quote-section__title">
+                            It just <strong>works.</strong>
+                        </h1>
+
+                        <p class="quote-section__body">
+                            “I really like how it is an all-in-one solution that handle many of
+                            the tasks that you would normally need separate tools to do the same
+                            job. This thing is a miracle worker.”
+                        </p>
+
+                        <footer class="quote-section__footer">
+                            <h2 class="quote-section__footer-title">
+                                Jeremy Robinson
+                            </h2>
+                            <h3 class="quote-section__footer-sub-title">
+                                CMO, Fylo
+                            </h3>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="landing-page__with-spacing landing-page__footer footer">
+            <img src="./assets/logo.svg" width="81" height="32" alt="suite logo">
+
+            <p class="footer__copyright"> Copyright - Suite</p>
+
+            <ul class="footer__social-links">
+                <li><a class="footer__social-link" href="#"><img src="./assets/icon-facebook.svg" alt="facebook logo"
+                            width="20" height="20" /></a>
+                </li>
+                <li><a class="footer__social-link" href="#"><img src="./assets/icon-twitter.svg" alt="twitter logo"
+                            width="20" height="20" /></a>
+                </li>
+                <li><a class="footer__social-link" href="#"><img src="./assets/icon-instagram.svg" alt="instagram logo"
+                            width="20" height="20" /></a></li>
+            </ul>
+        </footer>
+
+    </main>
 
 </body>
+
 </html>

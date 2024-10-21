@@ -1,0 +1,90 @@
+@import "reset";
+@import "mixins";
+@import "landing-page";
+@import "quote-section";
+@import "hero-section";
+@import "stats-grid";
+@import "button";
+
+:root {
+
+    // primary
+    --color--primary-dark-blue: hsl(219, 43%, 16%);
+    --color--primary-grey: hsl(218, 20%, 36%);
+    --color--primary-cream: hsl(30, 33%, 93%);
+    --color--primary-cream-white: hsl(30, 29%, 97%);
+
+    // Accent
+    --color--accent-purple: hsl(264, 100%, 69%);
+    --color--accent-pink: hsl(292, 76%, 54%);
+    --color--accent-orange: hsl(31, 100%, 65%);
+
+    // Gradients
+    --color--gradient-default: linear-gradient(to bottom right,
+            var(--color--accent-purple),
+            var(--color--accent-pink) 49%,
+            var(--color--accent-orange));
+
+
+    --color--gradient-background-height: 26.25rem;
+
+    --color--gradient-background: linear-gradient(to top,
+            var(--color--primary-cream) var(--color--gradient-background-height),
+            var(--color--primary-cream-white) calc(var(--color--gradient-background-height) + 1px));
+
+    @include mq('tablet') {
+        --color--gradient-background-height: 40rem;
+    }
+}
+
+body {
+    background: var(--color--gradient-background);
+
+    @include mq('tablet') {
+        min-height: 100vh;
+    }
+
+    @include mq('desktop') {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.0625rem;
+
+    @include mq('tablet') {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer__social-links {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        gap: 1.75rem;
+    }
+
+    .footer__copyright {
+        @include typo("footer");
+    }
+
+    .footer__social-link {
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}

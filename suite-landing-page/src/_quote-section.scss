@@ -1,0 +1,86 @@
+@import "mixins";
+
+.quote-section {
+    --quote-section--image-overlap: 11.3125rem;
+
+    @include mq('desktop') {
+        --quote-section--image-overlap: 2rem;
+    }
+
+    & {
+        padding-top: var(--quote-section--image-overlap);
+    }
+
+    .quote-section__main-image-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: calc(-1 * var(--quote-section--image-overlap));
+        // I have no idea what I'm doing
+        background: no-repeat center center/538px url('../assets/pattern-blur.svg');
+
+        @include mq('desktop') {
+            align-self: flex-end;
+            margin-top: calc(-1 * (5.5rem + var(--quote-section--image-overlap)));
+            margin-bottom: -5.5rem;
+            width: auto;
+            overflow: visible;
+        }
+    }
+
+    .quote-section__curved-line {
+        @include mq('desktop') {
+            margin-top: 4.5625rem;
+        }
+    }
+
+    .quote-section__main {
+        padding: 0 1rem 4rem 1rem; // mobile
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2.5rem;
+        border-radius: 0.9438rem;
+        background: var(--color--primary-dark-blue);
+        color: var(--color--primary-cream-white);
+
+        @include mq('desktop') {
+            padding: 5.5rem 7.8125rem 5.5rem 7rem;
+            flex-direction: row;
+            align-items: flex-start;
+            text-align: start;
+        }
+    }
+
+    .quote-section__text-block {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        @include mq('desktop') {
+            max-width: 21.875rem;
+        }
+    }
+
+    .quote-section__title {
+        @include typo('heading-l');
+    }
+
+    .quote-section__body {
+        color: var(--color--primary-cream);
+        @include typo('quote');
+    }
+
+    .quote-section__footer {
+        text-transform: uppercase;
+    }
+
+    .quote-section__footer-title {
+        @include typo('heading-m-b');
+    }
+
+    .quote-section__footer-sub-title {
+        @include typo('heading-s');
+    }
+}

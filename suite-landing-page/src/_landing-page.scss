@@ -1,0 +1,89 @@
+@import "mixins";
+
+.landing-page {
+    --landing-page--default-gap: 3.5rem;
+    --landing-page--right-spacing: 1rem;
+    --landing-page--left-spacing: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--landing-page--default-gap);
+
+    @include mq('tablet') {
+        & {
+            --landing-page--right-spacing: 2.5rem;
+            --landing-page--left-spacing: 2.4375rem;
+        }
+    }
+
+    @include mq('desktop') {
+        max-width: 68.75rem;
+
+        & {
+            --landing-page--right-spacing: 0rem;
+            --landing-page--left-spacing: 0rem;
+        }
+    }
+
+    .landing-page__header {
+        padding-top: 1.5rem;
+
+        @include mq('tablet') {
+            padding-top: 2.5rem;
+        }
+
+        @include mq('desktop') {
+            padding-top: 3.125rem;
+        }
+    }
+
+    .landing-page__hero-section {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: var(--landing-page--default-gap);
+
+        @include mq('tablet') {
+            row-gap: 5.5rem;
+            padding-top: calc(5rem - var(--landing-page--default-gap));
+        }
+
+        @include mq('desktop') {
+            column-gap: 6rem;
+            flex-direction: row;
+            padding-top: calc(4.1875rem - var(--landing-page--default-gap));
+        }
+    }
+
+
+    .landing-page__footer {
+        padding: 0 0 5rem 0;
+
+        @include mq('tablet') {
+            padding: calc(4.5rem - var(--landing-page--default-gap)) 0 4.5rem 0;
+        }
+    }
+
+    .landing-page__stats-grid {
+        @include mq('desktop') {
+            min-width: 11.875rem;
+        }
+    }
+
+    .landing-page__quote-section {
+        @include mq('tablet') {
+            padding-left: var(--landing-page--left-spacing);
+            padding-right: var(--landing-page--right-spacing);
+            padding-top: calc(5.75rem - var(--landing-page--default-gap));
+        }
+
+        @include mq('desktop') {
+            padding-top: calc(9rem - var(--landing-page--default-gap));
+        }
+    }
+
+    .landing-page__with-spacing {
+        padding-left: var(--landing-page--left-spacing);
+        padding-right: var(--landing-page--right-spacing);
+    }
+}

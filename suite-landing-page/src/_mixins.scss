@@ -1,0 +1,131 @@
+@use "sass:map";
+
+$mq-breakpoints: (
+    "mobile": 23.4375rem,
+    "tablet": 48rem,
+    "desktop": 90rem,
+);
+
+@mixin mq($size) {
+    @if not map.has-key($mq-breakpoints, $size) {
+        @error "$size must be one of #{map.keys($mq-breakpoints)} - \"#{$size}\" given";
+    }
+
+    @media (min-width: #{map.get($mq-breakpoints, $size)}) {
+        @content;
+    }
+}
+
+@mixin typo($style) {
+    font-family: "Epilogue", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+
+    @if $style =="heading-xl" {
+        font-size: 2.375rem;
+        line-height: 2.75rem;
+        letter-spacing: -0.0331rem;
+
+        @include mq("tablet") {
+            font-size: 3.5rem;
+            line-height: 4rem;
+            letter-spacing: 0.0488rem;
+        }
+
+        @include mq("desktop") {
+            font-size: 4.5rem;
+            line-height: 4.875rem;
+            letter-spacing: -0.0625rem;
+        }
+    }
+
+    @else if $style =="heading-l" or $style =="heading-l-b" {
+
+        @if $style =="heading-l-b" {
+            font-weight: 700;
+        }
+
+        font-size: 2.5rem;
+        line-height: 3rem;
+        letter-spacing: -0.0263rem;
+
+        @include mq("desktop") {
+            font-size: 3rem;
+            line-height: 3.5rem;
+            letter-spacing: -0.0313rem;
+        }
+
+    }
+
+    @else if $style =="stats-item-heading-l" {
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 3.5rem;
+
+        @include mq("desktop") {
+            letter-spacing: -0.0313rem;
+        }
+    }
+
+    @else if $style =="heading-m" or $style =="heading-m-b" {
+
+        font-size: 1.125rem;
+        line-height: 2rem;
+        letter-spacing: -0.0125rem;
+
+        @if $style =="heading-m-b" {
+            font-weight: 700;
+        }
+    }
+
+    @else if $style =="heading-s" {
+        font-size: 1rem;
+        line-height: 1.625rem;
+        letter-spacing: 0.1563rem;
+    }
+
+    @else if $style =="button" {
+        font-weight: 700;
+
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        letter-spacing: -0.0088rem;
+
+        @include mq('tablet') {
+            font-size: 1rem;
+            line-height: 2rem;
+            letter-spacing: -0.01rem;
+        }
+    }
+
+    @else if $style =="quote" {
+        font-size: 1.125rem;
+        line-height: 2rem;
+
+        @include mq('desktop') {
+            font-size: 1.25rem;
+            line-height: 2.1875rem;
+        }
+    }
+
+    @else if $style =="body" {
+        font-size: 1rem;
+        line-height: 1.75rem;
+        letter-spacing: 0.0056rem;
+
+        @include mq('desktop') {
+            font-size: 1.125rem;
+            line-height: 2rem;
+            letter-spacing: 0.0063rem;
+        }
+    }
+
+    @else if $style =="footer" {
+        font-size: 0.9375rem;
+        line-height: 2rem;
+        letter-spacing: 0.005rem;
+    }
+
+    @else {
+        @error "unknown font style \"#{$style}\"";
+    }
+}
