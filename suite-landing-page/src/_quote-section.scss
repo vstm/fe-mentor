@@ -12,19 +12,27 @@
     }
 
     .quote-section__main-image-wrapper {
+        --quote-section--main-image-wrapper--background-radius: 16rem;
+
         display: flex;
         justify-content: center;
         width: 100%;
         margin-top: calc(-1 * var(--quote-section--image-overlap));
-        // I have no idea what I'm doing
-        background: no-repeat center center/538px url('../assets/pattern-blur.svg');
+        // I have no idea what I'm doing here
+        background: no-repeat bottom center / var(--quote-section--main-image-wrapper--background-radius) url('../assets/pattern-blur.svg');
+
+        @include mq('tablet') {
+            --quote-section--main-image-wrapper--background-radius:
+                22rem;
+        }
 
         @include mq('desktop') {
-            align-self: flex-end;
+            --quote-section--main-image-wrapper--background-radius:
+                31rem;
+            padding: 0 2.5rem;
             margin-top: calc(-1 * (5.5rem + var(--quote-section--image-overlap)));
             margin-bottom: -5.5rem;
-            width: auto;
-            overflow: visible;
+            align-self: flex-end;
         }
     }
 
@@ -32,10 +40,14 @@
         @include mq('desktop') {
             margin-top: 4.5625rem;
         }
+
+        @include mq('desktop') {
+            margin-right: 2.5rem;
+        }
     }
 
     .quote-section__main {
-        padding: 0 1rem 4rem 1rem; // mobile
+        padding: 0 1rem 4rem 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -50,6 +62,9 @@
             flex-direction: row;
             align-items: flex-start;
             text-align: start;
+            // solved with margin/padding on desktop
+            // because of the fuzzy background circle
+            gap: 0;
         }
     }
 
